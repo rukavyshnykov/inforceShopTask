@@ -17,11 +17,18 @@ select,
 textarea,
 optgroup,
 option {
+  padding: 6px;
+
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
   font-style: inherit;
   color: inherit;
+  color: white;
+
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 3px;
 }
 
 a:visited {
