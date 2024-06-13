@@ -36,6 +36,7 @@ export const ProductForm = ({ onCancel, onFormSubmit }: ProductFormProps) => {
       size: { height: args.height, width: args.width },
       weight: args.weight,
     })
+    onCancel()
   }
 
   return (
