@@ -36,7 +36,7 @@ export const ProductPage = () => {
           <button onClick={() => setShowModal(true)} type={'button'}>
             EDIT
           </button>
-          {showModal && createPortal(<>sdfsdfsdf</>, portal!)}
+          {showModal && createPortal(<>{'ne vstig :/'}</>, portal!)}
         </div>
       </div>
       <div>

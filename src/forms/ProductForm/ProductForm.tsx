@@ -8,7 +8,7 @@ import { z } from 'zod'
 
 import c from './ProductForm.module.scss'
 
-export const ProductForm = ({ onFormSubmit }: ProductFormProps) => {
+export const ProductForm = ({ onCancel, onFormSubmit }: ProductFormProps) => {
   const ProductFormSchema = z.object({
     count: z.number(),
     height: z.number(),
@@ -38,14 +38,12 @@ export const ProductForm = ({ onFormSubmit }: ProductFormProps) => {
     })
   }
 
-  const handleFormSubmit = (event: Event) => {
-    event.preventDefault()
-    handleSubmit(onSubmit)()
-  }
-
   return (
-    //@ts-ignore
-    <form className={c.form} onSubmit={handleFormSubmit}>
+    <form
+      className={c.form}
+      onClick={(e: MouseEvent<HTMLFormElement>) => e.stopPropagation()}
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <label>
         Set product image url
         <input type={'text'} {...register('imageUrl')} />
@@ -68,10 +66,10 @@ export const ProductForm = ({ onFormSubmit }: ProductFormProps) => {
         <input type={'number'} {...register('count', { valueAsNumber: true })} />
       </label>
       <div className={c.buttons}>
-        <button type={'button'}>Cancel</button>
-        <button onClick={(e: MouseEvent<HTMLButtonElement>) => e.stopPropagation()} type={'submit'}>
-          Submit
+        <button onClick={() => onCancel()} type={'button'}>
+          Cancel
         </button>
+        <button type={'submit'}>Submit</button>
       </div>
     </form>
   )
