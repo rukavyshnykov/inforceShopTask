@@ -8,7 +8,7 @@ export const ProductList = ({ products }: ProductListProps) => {
       {products.length ? (
         products.map(p => <ProductCard key={p.id} product={p} />)
       ) : (
-        <>Oops... something went wrong</>
+        <>This list is empty!</>
       )}
     </div>
   )

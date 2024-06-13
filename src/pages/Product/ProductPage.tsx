@@ -17,7 +17,7 @@ export const ProductPage = () => {
   }, [id, products])
 
   if (product === undefined) {
-    return <>This list is empty!</>
+    return <>There is no such product exists!</>
   }
 
   return (
