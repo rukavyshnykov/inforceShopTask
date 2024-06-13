@@ -1,10 +1,10 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createHashRouter } from 'react-router-dom'
 
 import { Layout } from './components/Layout/Layout'
 import { ProductPage } from './pages/Product/ProductPage'
 import { ProductListPage } from './pages/ProductList/ProductListPage'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     children: [
       {

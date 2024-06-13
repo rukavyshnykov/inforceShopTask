@@ -1,4 +1,4 @@
-import { FormEventHandler, MouseEvent } from 'react'
+import { MouseEvent } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { Product } from '@/types/models'
@@ -19,7 +19,7 @@ export const ProductForm = ({ onCancel, onFormSubmit }: ProductFormProps) => {
   })
 
   const {
-    formState: { errors },
+    //formState: { errors },
     handleSubmit,
     register,
   } = useForm<ProductFormType>({ resolver: zodResolver(ProductFormSchema) })

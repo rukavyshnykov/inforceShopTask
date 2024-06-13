@@ -1,4 +1,4 @@
-import { MouseEvent, useState } from 'react'
+import { useState } from 'react'
 import { createPortal } from 'react-dom'
 
 import { ProductForm } from '@/forms/ProductForm/ProductForm'
